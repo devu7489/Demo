@@ -1,18 +1,31 @@
-import React from 'react';
+import React,{Component} from 'react';
 import './App.css';
+import { connect } from 'react-redux';
 import Router from './routers/Router';
-import Header from './component/Header';
+import Login from './component/Login';
 
-function App() {
-  return (
-    <div className="App">
-		<div className='container'>
-			<Header />
-			<hr/>
-			<Router/>
-		</div>
-    </div>
-  );
+const mapStateToProps = state => ({
+	loggedIn: state.jobs.loggedIn
+});
+
+class App extends Component{
+	
+	render(){
+		const {loggedIn} = this.props;
+		return(
+			<div className="App">
+				<div className='container'>
+				{loggedIn && Object.keys(loggedIn).length !== 0?
+				<React.Fragment>
+					<Router/>
+				</React.Fragment>
+				:<Login/>}
+				
+				</div>
+    		</div>
+		)
+	}
 }
 
-export default App;
+
+export default connect(mapStateToProps)(App);

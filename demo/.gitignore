@@ -19,6 +19,10 @@ target/
 *.iml
 *.ipr
 
+### Nodejs ###
+**/react-ui/build/
+**/react-ui/node_modules/
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/

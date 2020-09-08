@@ -19,6 +19,16 @@ export default (state=initialState, action) => {
 				jobReqHistory:action.jobReqHistory
 			})
 			
+		case 'LOGIN_SUCCESS':
+			return Object.assign({}, state, {
+				loggedIn: action.loggedIn
+			});
+			
+		case 'LOG_OUT':
+			return Object.assign({}, state, {
+				loggedIn:{}
+			})
+			
 			
 		default:
 			return state

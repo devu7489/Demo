@@ -51,3 +51,26 @@ export const getJobReqHistory = (jobReqId) => {
 		})
 	}
 }
+
+const _login = (loggedIn) => ({
+	type:'LOGIN_SUCCESS',
+	loggedIn
+})
+
+export const login = (user) => {
+	return(dispatch) => {
+		return axios.post('login',user).then(response => {
+			dispatch(_login(response.data));
+		})
+	}
+}
+
+const _logout = () => ({
+	type:'LOG_OUT'
+})
+
+export const logout = () => {
+	return(dispatch) => {
+		dispatch(_logout())
+	}
+}

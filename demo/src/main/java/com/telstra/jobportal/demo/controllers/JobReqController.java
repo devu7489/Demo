@@ -18,9 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.telstra.jobportal.demo.Model.JobDetails;
 import com.telstra.jobportal.demo.Model.JobRequest;
 import com.telstra.jobportal.demo.Model.JobRequestHistory;
+import com.telstra.jobportal.demo.Model.User;
 import com.telstra.jobportal.demo.repository.JobDetailsRepo;
 import com.telstra.jobportal.demo.repository.JobReqHistoryRepo;
 import com.telstra.jobportal.demo.repository.JobReqRepo;
+import com.telstra.jobportal.demo.repository.UserRepo;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -35,6 +37,18 @@ public class JobReqController {
 	
 	@Autowired
 	JobReqHistoryRepo jobReqHistoryRepo;
+	
+	@Autowired
+	UserRepo userRepo;
+	
+	@PostMapping("/login")
+	public User loginUser(@RequestBody User user) {
+		Optional<User> opt = userRepo.findAllByUserNameAndPassword(user.getUserName(), user.getPassword());
+		if(opt.isPresent()) {
+			return opt.get();
+		}
+		return null;
+	}
 	
 	@GetMapping("/jobs")
 	public List<JobDetails> getAllJobs(){
