@@ -23,6 +23,9 @@ target/
 **/react-ui/build/
 **/react-ui/node_modules/
 
+##Maven##
+.mvn
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
