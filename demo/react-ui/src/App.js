@@ -11,6 +11,7 @@ const mapStateToProps = state => ({
 class App extends Component{
 	
 	render(){
+		// Test
 		const {loggedIn} = this.props;
 		return(
 			<div className="App">
