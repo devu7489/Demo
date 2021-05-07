@@ -14,6 +14,7 @@ class App extends Component{
 		// Test
 		// Adding test for testing rebase
 		// Test for pull
+		//Adding more test
 		const {loggedIn} = this.props;
 		return(
 			<div className="App">
