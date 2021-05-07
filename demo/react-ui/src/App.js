@@ -12,6 +12,7 @@ class App extends Component{
 	
 	render(){
 		// Test
+		// Adding test for testing rebase
 		const {loggedIn} = this.props;
 		return(
 			<div className="App">
