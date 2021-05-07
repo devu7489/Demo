@@ -11,10 +11,7 @@ const mapStateToProps = state => ({
 class App extends Component{
 	
 	render(){
-		// Test
-		// Adding test for testing rebase
-		// Test for pull
-		//Adding more test
+		//Testing 
 		const {loggedIn} = this.props;
 		return(
 			<div className="App">
