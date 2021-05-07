@@ -22,6 +22,7 @@ public class DemoData implements CommandLineRunner {
 
     @Override
     public void run(String...args) throws Exception {
+		//Adding comment
         repo.save(new JobDetails(1L,"J01","Java_Full_Stack_Developer","Job Detailed Desc","active",new Date()));
         repo.save(new JobDetails(2L,"J02","Python_Full_Stack_Developer","Job Detailed Desc","active",new Date()));
         repo.save(new JobDetails(3L,"J03","Dotnet_Full_Stack_Developer","Job Detailed Desc","active",new Date()));
